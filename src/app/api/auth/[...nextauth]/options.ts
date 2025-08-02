@@ -137,4 +137,6 @@ export const options: NextAuthOptions = {
     strategy: 'jwt',
   },
   secret: process.env.NEXTAUTH_SECRET,
+  // 👇 THIS IS THE NEW LINE
+  debug: true,
 };
