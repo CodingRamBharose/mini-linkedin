@@ -1,36 +1,122 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+```markdown
+# Mini LinkedIn-like Community Platform
+
+A mini LinkedIn-like community platform built with **Next.js**, **NextAuth.js** (supporting Google login and credentials), **JWT** for authentication, and **MongoDB**. The app supports user authentication with email verification through **Resend**, public post creation, a real-time feed, and user profiles displaying bios and posts. The UI is styled using **ShadCN** and fully responsive.
+
+---
+
+## Tech Stack
+
+- **Framework:** Next.js (React)  
+- **Authentication:** NextAuth.js (Email/password + Google OAuth), JWT tokens  
+- **Database:** MongoDB with Mongoose  
+- **Email Verification:** Resend API  
+- **UI:** ShadCN components, Tailwind CSS  
+- **Validation:** React Hook Form, Zod  
+- **Deployment:** Vercel
+
+---
+
+## Features
+
+- Register/Login using email/password or Google OAuth  
+- Email verification on signup via Resend  
+- JWT-secured sessions  
+- User profiles with name, email, and bio  
+- Create and view text-only posts  
+- Real-time post feed with author and timestamp  
+- Responsive UI for desktop and mobile  
+- Form validation with React Hook Form and Zod
+
+---
+
+## Project Structure
+
+```
+
+/app                 # Next.js app directory with pages and API routes
+/components          # Reusable UI components (ShadCN-based)
+/lib                 # Utilities: database connection, JWT helpers, validation schemas
+/models              # Mongoose schemas/models for User, Post, etc.
+/pages/api           # API routes (auth, posts, users, email verification)
+/public              # Static assets
+/styles              # Tailwind and global styles
+
+````
+
+---
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js v16 or higher  
+- MongoDB URI (local or cloud)  
+- Resend API Key  
+- Google OAuth Client ID and Secret  
+
+### Setup
+
+1. Clone the repo:
+
+```bash
+git clone https://github.com/CodingRamBharose/mini-linkedin.git
+cd mini-linkedin
+````
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Create a `.env.local` file in the root folder with:
+
+```env
+MONGO_URI=your_mongodb_connection_string
+NEXTAUTH_SECRET=your_nextauth_secret_key
+NEXTAUTH_URL=http://localhost:3000
+GOOGLE_CLIENT_ID=your_google_oauth_client_id
+GOOGLE_CLIENT_SECRET=your_google_oauth_client_secret
+RESEND_API_KEY=your_resend_api_key
+JWT_SECRET=your_jwt_secret_key
+```
+
+4. Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+5. Visit [http://localhost:3000](http://localhost:3000) to view the app.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Extra Notes
 
-## Learn More
+* Email verification is implemented using the Resend API and React Email components
+* JWT tokens are used for secure session management
+* UI styled with ShadCN and Tailwind for modern and responsive design
+* Client-side validation is done with React Hook Form and Zod schemas
+* Real-time feed updates can be enhanced via polling or websockets (currently polling, specify if different)
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Live Demo
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+[https://mini-linkedin-two.vercel.app](https://mini-linkedin-two.vercel.app)
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Contribution
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Feel free to fork the repo, open issues, and submit pull requests.
+
+---
+
+## Contact
+
+Reach out at [your-email@example.com](mailto:ramavtar.crb@gmail.com) for questions or feedback.
+
+---
+
